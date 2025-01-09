@@ -261,6 +261,15 @@ function add_template(template) {
 
                 // Textbox
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", textbox_object);
+            } else if (template == "Dark_Army") {
+                // Add
+                textbox_object["fontSize"] = image.height / 10;
+                textbox_object["left"] = image.width / 2;
+                textbox_object["top"] = image.height / 16;
+                textbox_object["width"] = image.width / 1.5;
+
+                // Textbox
+                var text_object = new fabric.Textbox("Create Your\nPoncho Meme", textbox_object);
             } else if (template == "Ponchonator") {
                 // Add
                 textbox_object["fontSize"] = image.height / 13;
@@ -714,7 +723,7 @@ function load_asset(asset_type) {
         if (poncho_json.memes.assets[asset_type].length > 0) {
             // Empty
             $(".assets .gallery .inner").empty();
-        
+
             // Loop
             $(poncho_json.memes.assets[asset_type]).each(function (index, value) {
                 // Vars
