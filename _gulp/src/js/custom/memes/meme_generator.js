@@ -710,11 +710,11 @@ function load_asset(asset_type) {
             asset_type = "1_Fur";
         }
 
-        // Empty
-        $(".assets .gallery .inner").empty();
-
         // Check if
         if (poncho_json.memes.assets[asset_type].length > 0) {
+            // Empty
+            $(".assets .gallery .inner").empty();
+        
             // Loop
             $(poncho_json.memes.assets[asset_type]).each(function (index, value) {
                 // Vars
@@ -728,6 +728,21 @@ function load_asset(asset_type) {
 
                 // Append
                 $(selector_meme_generator + " .assets .gallery .inner").append(gallery_string);
+            });
+
+            // On click - select asset
+            $(selector_meme_generator + " .asset-button").off("click");
+            $(selector_meme_generator + " .asset-button").on("click", function () {
+                try {
+                    // Vars
+                    var image = $(this).find("img").attr("src");
+                    var asset_size = $(selector_meme_generator + " [name=asset-size]").val();
+
+                    // Add asset
+                    add_asset(image, asset_size);
+                } catch (e) {
+                    // console.error(e);
+                }
             });
         }
     } catch (e) {
