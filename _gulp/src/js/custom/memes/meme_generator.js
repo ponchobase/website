@@ -185,7 +185,7 @@ function add_template(template) {
             image.set({
                 hasControls: false,
                 hoverCursor: "auto",
-                selectable: true
+                selectable: false
             });
 
             // Add image
@@ -934,7 +934,7 @@ function upload_template(e) {
                 image.set({
                     hasControls: false,
                     hoverCursor: "auto",
-                    selectable: true
+                    selectable: false
                 });
 
                 // Add image
