@@ -702,7 +702,7 @@ function load_asset(asset_type) {
         // Vars
         var selector_modal_memes = "[data-modal=memes]";
         var selector_meme_generator = selector_modal_memes + " .meme_generator";
-        var folder = "/dist/img/memes/assets/" + asset_type + "/";
+        var folder = "https://www.ponchobase.com/dist/img/memes/assets/" + asset_type + "/";
 
         // Check if
         if (!asset_type) {
