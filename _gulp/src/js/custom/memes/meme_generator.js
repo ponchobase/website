@@ -337,6 +337,39 @@ function add_template(template) {
 
                 // Textbox
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", textbox_object);
+            } else if (template == "Death") {
+                // Vars
+                var textbox_object_1 = textbox_object;
+                var textbox_object_2 = textbox_object;
+                var textbox_object_3 = textbox_object;
+
+                // Add
+                textbox_object_1["fontSize"] = image.height / 15;
+                textbox_object_1["left"] = image.width / 10;
+                textbox_object_1["top"] = image.height / 6;
+                textbox_object_1["width"] = image.width / 6;
+
+                // Textbox
+                var text_object = new fabric.Textbox("Poncho\n$0.1", textbox_object_1);
+
+                // Add
+                textbox_object_2["fontSize"] = image.height / 15;
+                textbox_object_2["left"] = image.width / 2.5;
+                textbox_object_2["top"] = image.height / 6;
+                textbox_object_2["width"] = image.width / 6;
+
+                // Textbox
+                var text_object_two = new fabric.Textbox("Poncho\n$0.2", textbox_object_2);
+
+
+                // Add
+                textbox_object_3["fontSize"] = image.height / 15;
+                textbox_object_3["left"] = image.width / 1.25;
+                textbox_object_3["top"] = image.height / 6;
+                textbox_object_3["width"] = image.width / 6;
+
+                // Textbox
+                var text_object_three = new fabric.Textbox("Poncho\n$2", textbox_object_3);
             } else if (
                 template == "Gold_Poncho" ||
                 template == "Celebration" ||
@@ -385,6 +418,12 @@ function add_template(template) {
             if (text_object_two) {
                 // Add text
                 poncho_json.meme_canvas.add(text_object_two);
+            }
+
+            // Check if
+            if (text_object_three) {
+                // Add text
+                poncho_json.meme_canvas.add(text_object_three);
             }
 
             // Init manage layers
