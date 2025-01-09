@@ -702,7 +702,7 @@ function load_asset(asset_type) {
         // Vars
         var selector_modal_memes = "[data-modal=memes]";
         var selector_meme_generator = selector_modal_memes + " .meme_generator";
-        var folder = "https://www.ponchobase.com/dist/img/memes/assets/" + asset_type + "/";
+        var folder = "/dist/img/memes/assets/" + asset_type + "/";
 
         // Check if
         if (!asset_type) {
@@ -710,50 +710,26 @@ function load_asset(asset_type) {
             asset_type = "1_Fur";
         }
 
-        // Get folder
-        $.ajax({
-            url: folder,
-            success: function (data) {
-                // Check if
-                if (data) {
-                    // Empty
-                    $(".assets .gallery .inner").empty();
+        // Empty
+        $(".assets .gallery .inner").empty();
 
-                    // Loop
-                    $(data).find("a").attr("href", function (i, val) {
-                        // Check if
-                        if (val.match(/\.(jpe?g|png|gif)$/)) {
-                            // Vars
-                            var filename_array = val.split(".");
-                            var filename_title = filename_array[0];
-                            filename_title = filename_title.replaceAll("_", " ");
-                            filename_title = filename_title.replaceAll("&", " & ");
+        // Check if
+        if (poncho_json.memes.assets[asset_type].length > 0) {
+            // Loop
+            $(poncho_json.memes.assets[asset_type]).each(function (index, value) {
+                // Vars
+                var filename_array = value.split(".");
+                var filename_title = filename_array[0];
+                filename_title = filename_title.replaceAll("_", " ");
+                filename_title = filename_title.replaceAll("&", " & ");
 
-                            // Vars
-                            var gallery_string = '<button class="asset-button" type="button" title="' + filename_title + '"><img src="' + folder + val + '" alt="' + filename_title + '" loading="lazy"></button>';
+                // Vars
+                var gallery_string = '<button class="asset-button" type="button" title="' + filename_title + '"><img src="' + folder + value + '" alt="' + filename_title + '" loading="lazy"></button>';
 
-                            // Append
-                            $(selector_meme_generator + " .assets .gallery .inner").append(gallery_string);
-                        }
-                    });
-                }
-
-                // On click - select asset
-                $(selector_meme_generator + " .asset-button").off("click");
-                $(selector_meme_generator + " .asset-button").on("click", function () {
-                    try {
-                        // Vars
-                        var image = $(this).find("img").attr("src");
-                        var asset_size = $(selector_meme_generator + " [name=asset-size]").val();
-
-                        // Add asset
-                        add_asset(image, asset_size);
-                    } catch (e) {
-                        // console.error(e);
-                    }
-                });
-            }
-        });
+                // Append
+                $(selector_meme_generator + " .assets .gallery .inner").append(gallery_string);
+            });
+        }
     } catch (e) {
         // console.error(e);
     }
