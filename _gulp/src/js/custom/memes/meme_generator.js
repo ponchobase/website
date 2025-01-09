@@ -288,6 +288,28 @@ function add_template(template) {
 
                 // Textbox
                 var text_object = new fabric.Textbox("The\nPonchonator", textbox_object);
+            } else if (template == "Brain_Jeet_Holder") {
+                // Vars
+                var textbox_object_1 = textbox_object;
+                var textbox_object_2 = textbox_object;
+
+                // Add
+                textbox_object_1["fontSize"] = image.height / 10;
+                textbox_object_1["left"] = image.width / 4;
+                textbox_object_1["top"] = image.height / 6;
+                textbox_object_1["width"] = image.width / 3;
+
+                // Textbox
+                var text_object = new fabric.Textbox("Jeeter", textbox_object_1);
+
+                // Add
+                textbox_object_2["fontSize"] = image.height / 10;
+                textbox_object_2["left"] = image.width / 1.33;
+                textbox_object_2["top"] = image.height / 6;
+                textbox_object_2["width"] = image.width / 3;
+
+                // Textbox
+                var text_object_two = new fabric.Textbox("Poncho Holder", textbox_object_2);
             } else if (template == "Brain_Jeet") {
                 // Add
                 textbox_object["fontSize"] = image.height / 10;
