@@ -270,15 +270,15 @@ function add_template(template) {
 
                 // Textbox
                 var text_object = new fabric.Textbox("Create Your\nPoncho Meme", textbox_object);
-            } else if (template == "Ponchonator") {
+            } else if (template == "Pepe") {
                 // Add
-                textbox_object["fontSize"] = image.height / 13;
-                textbox_object["left"] = image.width / 2;
-                textbox_object["top"] = image.height / 1.4;
-                textbox_object["width"] = image.width / 1.25;
+                textbox_object["fontSize"] = image.height / 10;
+                textbox_object["left"] = image.width / 3.23;
+                textbox_object["top"] = image.height / 12;
+                textbox_object["width"] = image.width / 2;
 
                 // Textbox
-                var text_object = new fabric.Textbox("The\nPonchonator", textbox_object);
+                var text_object = new fabric.Textbox("Create Your\nPoncho Meme", textbox_object);
             } else if (template == "Ponchonator") {
                 // Add
                 textbox_object["fontSize"] = image.height / 13;
