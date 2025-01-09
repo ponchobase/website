@@ -22,7 +22,7 @@ function init_manage_layers() {
                     // Vars
                     object_layer_type = "Image Layer";
                     var image_src = object._element.src;
-                    image_src = image_src.replaceAll("/dist/img/memes/templates/", "/dist/img/memes/templates/_small/");
+                    image_src = image_src.replaceAll("/dist/img/memes/templates/", "/dist/img/memes/templates/small/");
 
                     // Vars
                     var image_src_array = image_src.split("/");
@@ -35,7 +35,7 @@ function init_manage_layers() {
                 } else if (type == "rect") {
                     // Vars
                     object_layer_type = "Shape Layer";
-                    var image_src = "/dist/img/memes/templates/_small/Transparent.png?v=3";
+                    var image_src = "/dist/img/memes/templates/small/Transparent.png?v=3";
                     var image_src_title = "Transparent";
                     // var rect_fill = object.fill;
                     // var rect_stroke = object.stroke;

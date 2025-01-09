@@ -673,7 +673,7 @@ function init_templates() {
         var selector_meme_generator = selector_modal_memes + " .meme_generator";
 
         // Folder
-        var folder = "/dist/img/memes/templates/_small/";
+        var folder = "/dist/img/memes/templates/small/";
 
         // Loop
         $(poncho_json.memes.templates).each(function (index, value) {
